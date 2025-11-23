@@ -1,7 +1,8 @@
 
 describe('Login Tests', () => {
-  beforeEach(() => { cy.visit('/'); });
-
+beforeEach(() => {
+  cy.visit("/", { waitUntil: "domcontentloaded" });
+});
   it('valid login', () => {
     cy.get('[data-test="username"]').type('standard_user');
     cy.get('[data-test="password"]').type('secret_sauce');
